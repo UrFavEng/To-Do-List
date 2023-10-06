@@ -50,20 +50,20 @@ const AddForm = ({ setTask, task, setTodos, todos }) => {
           value={task}
           onChange={(e) => setTask(e.target.value)}
           type="text"
-          className="h-[45px] w-[100%] md:W-[90%] lg:w-[80%] pl-[10px] rounded-sm sm:mr-[10px] border-none outline-none"
+          className="h-[45px] bg-[#f4f2ee] border-b-[1px]  border-black w-[100%] md:W-[90%] lg:w-[80%] pl-[10px] sm:mr-[10px]  outline-none"
           placeholder="Enter Your Task"
         />
         <input
           type="submit"
           value={"Add"}
-          className="h-[40px] w-[60px] mr-[10px] bg-addBtn text-[18px] font-semibold cursor-pointer border-none outline-none rounded-sm text-paraClr"
+          className="h-[38px] w-[60px] mr-[10px] bg-addBtn text-[18px] font-semibold cursor-pointer border-none outline-none rounded-sm text-paraClr"
         />
         {todos.length > 1 && (
           <input
             type="button"
             value={"Remove All"}
             onClick={handleDeleteAll}
-            className="h-[40px] w-[110px]  bg-remvBtn text-[18px] font-semibold cursor-pointer border-none outline-none rounded-sm text-paraClr"
+            className="h-[38px] w-[110px]  bg-remvBtn text-[18px] font-semibold cursor-pointer border-none outline-none rounded-sm text-paraClr"
           />
         )}
       </form>
