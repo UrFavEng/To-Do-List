@@ -12,9 +12,7 @@ const AddForm = ({ setTask, task, setTodos, todos }) => {
         for (let i = 0; i < todos.length; i++) {
           if (!todos.some((todo) => todo === e.target[0].value)) {
             setTodos([task, ...todos]);
-
             localStorage.setItem("todos", JSON.stringify([...todos, task]));
-
             setInOrNot(false);
             setEmty(false);
             setTask("");
@@ -54,7 +52,7 @@ const AddForm = ({ setTask, task, setTodos, todos }) => {
         <input
           type="submit"
           value={"Add"}
-          className="h-[38px] w-[60px] mr-[10px] bg-addBtn text-[18px] font-semibold cursor-pointer border-none outline-none rounded-sm text-paraClr"
+          className="h-[38px] w-[60px] lg:mr-[10px] bg-addBtn text-[18px] font-semibold cursor-pointer border-none outline-none rounded-sm text-paraClr"
         />
         {todos.length > 1 && (
           <input
