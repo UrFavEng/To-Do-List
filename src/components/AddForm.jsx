@@ -52,7 +52,7 @@ const AddForm = ({ setTask, task, setTodos, todos }) => {
         <input
           type="submit"
           value={"Add"}
-          className="h-[38px] w-[60px] lg:mr-[10px] bg-addBtn text-[18px] font-semibold cursor-pointer border-none outline-none rounded-sm text-paraClr"
+          className="h-[38px] w-[60px]  bg-addBtn text-[18px] font-semibold cursor-pointer border-none outline-none rounded-sm text-paraClr"
         />
         {todos.length > 1 && (
           <input
