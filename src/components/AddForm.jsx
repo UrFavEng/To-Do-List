@@ -58,12 +58,14 @@ const AddForm = ({ setTask, task, setTodos, todos }) => {
           value={"Add"}
           className="h-[40px] w-[60px] mr-[10px] bg-addBtn text-[18px] font-semibold cursor-pointer border-none outline-none rounded-sm text-paraClr"
         />
-        <input
-          type="button"
-          value={"Remove All"}
-          onClick={handleDeleteAll}
-          className="h-[40px] w-[110px]  bg-remvBtn text-[18px] font-semibold cursor-pointer border-none outline-none rounded-sm text-paraClr"
-        />
+        {todos.length > 1 && (
+          <input
+            type="button"
+            value={"Remove All"}
+            onClick={handleDeleteAll}
+            className="h-[40px] w-[110px]  bg-remvBtn text-[18px] font-semibold cursor-pointer border-none outline-none rounded-sm text-paraClr"
+          />
+        )}
       </form>
       {inOrNot && (
         <p className=" text-remvBtn mt-[-15px] text-center font-medium text-[18px]">
