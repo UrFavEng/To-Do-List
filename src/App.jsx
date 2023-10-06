@@ -1,11 +1,16 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./App.css";
 import { AddForm, DisplayTasks } from "./components";
 function App() {
   const [todos, setTodos] = useState([]);
 
   const [task, setTask] = useState("");
-
+  useEffect(() => {
+    const storedTodos = localStorage.getItem("todos");
+    if (storedTodos) {
+      setTodos(JSON.parse(storedTodos));
+    }
+  }, []);
   return (
     <div>
       <h1 className=" text-hedingClr text-center text-[50px] font-bold tracking-[-1px] my-[10px]">

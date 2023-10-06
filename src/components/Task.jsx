@@ -6,6 +6,7 @@ const Task = ({ task, setTodos, todos }) => {
   const handleDelete = (task) => {
     const newArray = todos?.filter((e) => e !== task);
     setTodos(newArray);
+    localStorage.setItem("todos", JSON.stringify(newArray));
   };
   return (
     <div

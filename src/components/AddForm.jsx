@@ -4,16 +4,18 @@ const AddForm = ({ setTask, task, setTodos, todos }) => {
   const [inOrNot, setInOrNot] = useState(false);
   const [emty, setEmty] = useState(false);
   const handleAdd = (e) => {
+    localStorage.setItem("todos", JSON.stringify(todos));
     setInOrNot(false);
     setEmty(false);
     e.preventDefault();
-    console.log(todos);
     if (e.target[0].value.trim() != "") {
       if (todos.length > 0) {
         for (let i = 0; i < todos.length; i++) {
-          console.log(todos[i]);
           if (!todos.some((todo) => todo === e.target[0].value)) {
             setTodos([...todos, task]);
+
+            localStorage.setItem("todos", JSON.stringify([...todos, task]));
+
             setInOrNot(false);
             setEmty(false);
             setTask("");
@@ -24,8 +26,11 @@ const AddForm = ({ setTask, task, setTodos, todos }) => {
           }
         }
       } else {
-        setTodos([...todos, task]);
+        setTodos([task]);
         setTask("");
+        const frstEle = [task];
+        console.log(frstEle);
+        localStorage.setItem("todos", JSON.stringify(frstEle));
       }
     } else {
       setEmty(true);
