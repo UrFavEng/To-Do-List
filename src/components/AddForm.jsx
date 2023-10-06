@@ -36,10 +36,14 @@ const AddForm = ({ setTask, task, setTodos, todos }) => {
       setEmty(true);
     }
   };
+  const handleDeleteAll = () => {
+    setTodos([]);
+    localStorage.setItem("todos", JSON.stringify([]));
+  };
   return (
     <>
       <form
-        className="my-[30px] text-center flex flex-col gap-y-4 lg:flex-row justify-center items-center"
+        className="my-[30px] text-center flex  gap-y-4 lg:flex-row justify-center items-center flex-wrap"
         onSubmit={handleAdd}
       >
         <input
@@ -52,7 +56,13 @@ const AddForm = ({ setTask, task, setTodos, todos }) => {
         <input
           type="submit"
           value={"Add"}
-          className="h-[40px] w-[80px] mr-[10px] bg-addBtn text-[18px] font-semibold cursor-pointer border-none outline-none rounded-sm text-paraClr"
+          className="h-[40px] w-[60px] mr-[10px] bg-addBtn text-[18px] font-semibold cursor-pointer border-none outline-none rounded-sm text-paraClr"
+        />
+        <input
+          type="button"
+          value={"Remove All"}
+          onClick={handleDeleteAll}
+          className="h-[40px] w-[110px]  bg-remvBtn text-[18px] font-semibold cursor-pointer border-none outline-none rounded-sm text-paraClr"
         />
       </form>
       {inOrNot && (
