@@ -3,7 +3,6 @@ import "./App.css";
 import { AddForm, DisplayTasks } from "./components";
 function App() {
   const [todos, setTodos] = useState([]);
-
   const [task, setTask] = useState("");
   useEffect(() => {
     const storedTodos = localStorage.getItem("todos");

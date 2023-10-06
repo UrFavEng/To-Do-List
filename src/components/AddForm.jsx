@@ -1,5 +1,4 @@
-import React, { useState } from "react";
-
+import { useState } from "react";
 const AddForm = ({ setTask, task, setTodos, todos }) => {
   const [inOrNot, setInOrNot] = useState(false);
   const [emty, setEmty] = useState(false);
@@ -12,7 +11,7 @@ const AddForm = ({ setTask, task, setTodos, todos }) => {
       if (todos.length > 0) {
         for (let i = 0; i < todos.length; i++) {
           if (!todos.some((todo) => todo === e.target[0].value)) {
-            setTodos([...todos, task]);
+            setTodos([task, ...todos]);
 
             localStorage.setItem("todos", JSON.stringify([...todos, task]));
 
@@ -29,7 +28,6 @@ const AddForm = ({ setTask, task, setTodos, todos }) => {
         setTodos([task]);
         setTask("");
         const frstEle = [task];
-        console.log(frstEle);
         localStorage.setItem("todos", JSON.stringify(frstEle));
       }
     } else {
