@@ -8,11 +8,14 @@ const Task = ({ task, setTodos, todos }) => {
     setTodos(newArray);
   };
   return (
-    <div key={task} className=" flex justify-center items-center  my-[10px]">
+    <div
+      key={task}
+      className=" flex justify-center items-center  my-[10px] flex-wrap gap-y-4"
+    >
       <div
         className={`${
           done && " line-through "
-        }  pl-[10px] rounded-sm text-paraClr text-[17px] font-medium w-[60%] text-left   min-h-[45px] flex bg-[#dbdbdb24] items-center`}
+        }  pl-[10px] rounded-sm text-paraClr text-[17px] font-medium  w-[100%] md:W-[90%] lg:w-[75%] text-left   min-h-[45px] flex bg-[#dbdbdb24] items-center`}
       >
         {task}
       </div>

@@ -8,7 +8,7 @@ const AddForm = ({ setTask, task, setTodos, todos }) => {
     setEmty(false);
     e.preventDefault();
     console.log(todos);
-    if (e.target[0].value != "") {
+    if (e.target[0].value.trim() != "") {
       if (todos.length > 0) {
         for (let i = 0; i < todos.length; i++) {
           console.log(todos[i]);
@@ -25,6 +25,7 @@ const AddForm = ({ setTask, task, setTodos, todos }) => {
         }
       } else {
         setTodos([...todos, task]);
+        setTask("");
       }
     } else {
       setEmty(true);
@@ -33,14 +34,14 @@ const AddForm = ({ setTask, task, setTodos, todos }) => {
   return (
     <>
       <form
-        className="my-[30px] text-center flex justify-center items-center"
+        className="my-[30px] text-center flex flex-col gap-y-4 lg:flex-row justify-center items-center"
         onSubmit={handleAdd}
       >
         <input
           value={task}
           onChange={(e) => setTask(e.target.value)}
           type="text"
-          className="h-[45px] w-[60%] pl-[10px] rounded-sm mr-[10px] border-none outline-none"
+          className="h-[45px] w-[100%] md:W-[90%] lg:w-[80%] pl-[10px] rounded-sm sm:mr-[10px] border-none outline-none"
           placeholder="Enter Your Task"
         />
         <input
