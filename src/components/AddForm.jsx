@@ -59,7 +59,7 @@ const AddForm = ({ setTask, task, setTodos, todos }) => {
             type="button"
             value={"Remove All"}
             onClick={handleDeleteAll}
-            className="h-[38px] w-[110px]  bg-remvBtn text-[18px] font-semibold cursor-pointer border-none outline-none rounded-sm text-paraClr"
+            className="h-[38px] w-[110px] ml-[10px] bg-remvBtn text-[18px] font-semibold cursor-pointer border-none outline-none rounded-sm text-paraClr"
           />
         )}
       </form>
